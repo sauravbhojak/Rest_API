@@ -1,0 +1,389 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block content %}
+<!-- =========================
+    HOME SECTION   
+============================== -->
+
+{% if 'email' not in request.session %}
+<section id="home" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+                <img style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1900px; height: 1000px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -283.5px;" src="{% static '/images/book1.jpg' %}" class="deleteable">
+                
+			<div class="col-md-offset-1 col-md-10 col-sm-12">
+				<h3 class="wow bounceIn" data-wow-delay="0.9s">Hello! you are welcome to</h3>
+				<h1 class="wow fadeInUp" data-wow-delay="1.6s">Professional<br>Writers</h1>
+				<a href="#overview" class="wow fadeInUp smoothScroll btn btn-default" data-wow-delay="2s">Start Reading</a> &ensp;&ensp;&ensp;&ensp;
+				<a href="#overview" class="wow fadeInUp smoothScroll btn btn-default" data-wow-delay="2s">Start Writing</a>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    OVERVIEW SECTION   
+============================== -->
+<section id="overview" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6 col-sm-12">
+				<img src="{% static '/images/overview-img.jpg' %}" class="img-responsive" alt="Overview">
+				<blockquote class="wow fadeInUp" data-wow-delay="1.9s">Fitness is free website template that can be used for any company. You may download, modify and use this layout for your website.</blockquote>
+			</div>
+
+			<div class="col-md-1"></div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-12" data-wow-delay="1s">
+				<div class="overview-detail">
+					<h2>About Fitness</h2>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat.</p>
+					<p>Fitness web template includes total 2 pages. This is an index (main) page and another is a <a href="blog-single.html">blog page</a>.</p>
+					<a href="#trainer" class="btn btn-default smoothScroll">Let us begin</a>
+				</div>
+			</div>
+
+			<div class="col-md-1"></div>
+
+		</div>
+	</div>
+</section>
+{% else %}
+<!--  -->
+
+&nbsp;&nbsp;&nbsp;<div style="margin-left:30px"><h2>Welcome {{request.session.username}}</h2></div>
+
+<!-- =========================
+    CAROUSAL SECTION   
+============================== -->
+<!-- Latest compiled and minified CSS -->
+<!-- https://xstore.8theme.com/demos/hosting/-->
+{% comment %} <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> {% endcomment %}
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
+ 
+ 
+
+
+<link rel="stylesheet" href="{% static '/css/carousal.css' %}">
+
+
+
+
+	<h4 style = "margin-left:2.5rem; font-size:2.5rem; padding-top:7rem;">STORY COLLECTION</h4>
+
+
+
+<!-- Item slider-->
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="itemslider">
+        <div class="carousel-inner">
+
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="https://images.unsplash.com/photo-1539840093138-9b3e230e5206?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=765a2eb222b1851840a4a157780fb487&auto=format&fit=crop&w=1534&q=80" class="img-responsive center-block"></a>
+              <h4 class="text-center">MAYORAL SUKNJA</h4>
+              <h5 class="text-center">200,00 TK</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2" style="width: 205px; height: 267px;" >
+              <a href="#"><img src="{% static '/images/blog-thumb3.jpg' %}" class="img-responsive center-block" style="width: 100%; height: 100%; object-fit: cover; box-shadow: 0 0 10px rgba(1.0, 1.0, 1.0, 1.0);"></a>
+              <h4 class="text-center">MAYORAL KOŠULJA</h4>
+              <h5 class="text-center">800 TK</h5>
+            </div>
+          </div>
+
+		  <div class="item" >
+            <div class="col-xs-12 col-sm-6 col-md-2" style="width: 205px; height: 267px; " >
+              <a href="#"><img src="{% static '/images/book.jpg' %}" class="img-responsive center-block" style="width: 100%; height: 100%; object-fit: cover; box-shadow: 0 0 10px rgba(1.0, 1.0, 1.0, 1.0);"></a>
+              <h4 class="text-center">MAYORAL KOŠULJA</h4>
+              <h5 class="text-center">800 TK</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=04aebe9a22884efa1a5f61e434215597&auto=format&fit=crop&w=500&q=60" class="img-responsive center-block"></a>
+              <span class="badge">10%</span>
+              <h4 class="text-center">PANTALONE TERI 2</h4>
+              <h5 class="text-center">4000,00 TK</h5>
+              <h6 class="text-center">5000,00 TK</h6>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="https://images.unsplash.com/photo-1531925470851-1b5896b67dcd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=91fe0ca1b5d72338a8aac04935b52148&auto=format&fit=crop&w=500&q=60" class="img-responsive center-block"></a>
+              <h4 class="text-center">CVETNA HALJINA</h4>
+              <h5 class="text-center">4000,00 RSD</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="https://images.unsplash.com/photo-1516961642265-531546e84af2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=74065eec3c2f6a8284bbe30402432f1d&auto=format&fit=crop&w=500&q=60" class="img-responsive center-block"></a>
+              <h4 class="text-center">MAJICA FOTO</h4>
+              <h5 class="text-center">40,00 TK</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="https://images.unsplash.com/photo-1532086853747-99450c17fa2e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=61a42a11f627b0d21d0df757d9b8fe23&auto=format&fit=crop&w=500&q=60" class="img-responsive center-block"></a>
+              <h4 class="text-center">MAJICA MAYORAL</h4>
+              <h5 class="text-center">100,00 TK</h5>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="slider-control">
+        <a class="left carousel-control" href="#itemslider" data-slide="prev"><img src="https://cdn0.iconfinder.com/data/icons/website-kit-2/512/icon_402-512.png" alt="Left" class="img-responsive"></a>
+        <a class="right carousel-control" href="#itemslider" data-slide="next"><img src="http://pixsector.com/cache/81183b13/avcc910c4ee5888b858fe.png" alt="Right" class="img-responsive"></a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Item slider end-->
+
+
+
+<script src="{% static '/js/carousal.js' %}"></script>
+<!-- =========================
+    END CAROUSAL SECTION   
+============================== -->
+{% endif %}
+
+
+
+
+
+
+<!-- =========================
+    TRAINER SECTION   
+============================== -->
+<section id="trainer" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="1.3s">
+				<h2>Top Writers</h2>
+				<p>Here is our Top Rated Writers.</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.9s">
+				<div class="trainer-thumb">
+					<img src="{% static '/images/trainer-img1.jpg' %}" class="img-responsive" alt="Trainer">
+						<div class="trainer-overlay">
+							<div class="trainer-des">
+								<h2>Jenny</h2>
+								<h3>Body Trainer</h3>
+								<ul class="social-icon">
+									<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
+									<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
+									<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
+								</ul>
+							</div>
+						</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate.</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="2s">
+				<div class="trainer-thumb">
+					<img src="{% static '/images/trainer-img2.jpg' %}" class="img-responsive" alt="Trainer">
+						<div class="trainer-overlay">
+							<div class="trainer-des">
+								<h2>Marry</h2>
+								<h3>Fitness Trainer</h3>
+								<ul class="social-icon">
+									<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
+									<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
+									<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
+								</ul>
+							</div>
+						</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate.</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="2.3s">
+				<div class="trainer-thumb">
+					<img src="{% static '/images/trainer-img3.jpg' %}" class="img-responsive" alt="Trainer">
+						<div class="trainer-overlay">
+							<div class="trainer-des">
+								<h2>Olivia</h2>
+								<h3>Yoga Teacher</h3>
+								<ul class="social-icon">
+									<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
+									<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
+									<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
+								</ul>
+							</div>
+						</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate.</p>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    NEWSLETTER SECTION   
+============================== -->
+<section id="newsletter" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10" data-wow-delay="0.9s">
+				<h2>Signup Newsletter</h2>
+				<p>Get discounts for your personal fitness and gym services now.</p>
+				<div class="newsletter_detail">
+					<form action="#" method="post" id="newsletter-signup">
+						<div class="col-md-6 col-sm-6">
+							<input name="name" type="text" class="form-control" id="name" placeholder="Name">
+					  	</div>
+						<div class="col-md-6 col-sm-6">
+							<input name="email" type="email" class="form-control" id="email" placeholder="Email">
+					  	</div>
+						<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+							<input name="submit" type="submit" class="form-control" id="submit" value="SEND MESSAGE">
+						</div>
+				  	</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    BLOG SECTION   
+============================== -->
+<section id="blog" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12 text-center">
+				<h2>Writer's Blog</h2>
+				<p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo.</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.9s">
+				<div class="blog-thumb">
+					<span class="blog-date">Body Fitness / July 2, 2016</span>
+					<h3 class="blog-title"><a href="blog-single.html">How to get a fitness model body?</a></h3>
+					<h5 id="blog-author">by David Walker</h5>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.3s">
+				<div class="blog-thumb">
+					<span class="blog-date">Healthy Fit / June 8, 2016</span>
+					<h3 class="blog-title"><a href="blog-single.html">Personal Fitness Tips</a></h3>
+					<h5 id="blog-author">by George</h5>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.6s">
+				<div class="blog-thumb">
+					<span class="blog-date">Gym Services / May 9, 2016</span>
+					<h3 class="blog-title"><a href="blog-single.html">Efficient Workout Plans</a></h3>
+					<h5 id="blog-author">by Mary Louis</h5>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.9s">
+				<div class="blog-thumb">
+					<span class="blog-date">Practice Aerobics / April 18, 2016</span>
+					<h3 class="blog-title"><a href="blog-single.html">How to practice Aerobics?</a></h3>
+					<h5 id="blog-author">by Michael Fit</h5>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    PRICE SECTION   
+============================== -->
+<section id="price" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.9s">
+				<h2>Our Prices</h2>
+				<p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo.</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1s">
+				<div class="pricing__item">
+                    <h3 class="pricing__title">Healthy</h3>
+                    <div class="pricing__price"><span class="pricing__currency">$</span>350</div>
+                    <ul class="pricing__feature-list">
+                        <li class="pricing__feature">One General Trainer</li>
+                        <li class="pricing__feature">Gym Services</li>
+                        <li class="pricing__feature">5 Yoga Courses</li>
+                        <li class="pricing__feature">10 Thai Massages</li>
+                        <li class="pricing__feature">15 Aerobics</li>
+                    </ul>
+                    <button class="pricing__action">Sign Up Now</button>
+                </div>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.3s">
+				<div class="pricing__item">
+                    <h3 class="pricing__title">Best Fit</h3>
+                    <div class="pricing__price"><span class="pricing__currency">$</span>550</div>                  
+                    <ul class="pricing__feature-list">
+                        <li class="pricing__feature">Two General Trainers</li>
+                        <li class="pricing__feature">Gym Services</li>
+                        <li class="pricing__feature">10 Yoga Courses</li>
+                        <li class="pricing__feature">20 Thai Massages</li>
+                        <li class="pricing__feature">25 Aerobics</li>
+                    </ul>
+                    <button class="pricing__action">Sign Up Now</button>
+                </div>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.6s">
+				<div class="pricing__item">
+                    <h3 class="pricing__title">Rigid Body</h3>
+                    <div class="pricing__price"><span class="pricing__currency">$</span>750</div> 
+                    <ul class="pricing__feature-list">
+                        <li class="pricing__feature">Three Personal Trainers</li>
+                        <li class="pricing__feature">Gym Services</li>
+                        <li class="pricing__feature">15 Yoga Courses</li>
+                        <li class="pricing__feature">20 Thai Massages</li>
+                        <li class="pricing__feature">35 Aerobics</li>
+                    </ul>
+                   <button class="pricing__action">Sign Up Now</button>
+                </div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}

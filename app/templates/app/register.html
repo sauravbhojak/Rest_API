@@ -1,0 +1,90 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous">
+</script>
+
+
+
+<section id="newsletter" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10" data-wow-delay="0.9s">
+				<h2>Register</h2>
+                {% if msg %}
+				    <p>{{msg}}</p>
+                {% endif %}
+
+                <p><span id="psw_error"></span></p>
+                <p><span id="name_error"></span></p>
+                <p><span id="email_error"></span></p>
+                <p><span id="pass_error"></span></p>
+                
+
+				<div class="newsletter_detail">
+					<form action="{% url 'register' %}" method="post" id="newsletter-signup">
+                        {% csrf_token %}
+						<div class="col-md-6 col-sm-6">
+							<input name="uname" type="text" class="form-control" id="name" placeholder="Username">
+					  	</div>
+						<div class="col-md-6 col-sm-6">
+							<input name="email" type="email" class="form-control" id="email" placeholder="Email">
+                            
+					  	</div>
+                          <div class="col-md-6 col-sm-6">
+							<input name="pswd" type="password" class="form-control" id="pswd" placeholder="Password">
+					  	</div>
+                        </div>
+                          <div class="col-md-6 col-sm-6">
+							<input name="cpswd" type="password" class="form-control" id="cpswd" placeholder="Confirm Password">
+					  	</div>
+						<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+							<input name="submit" type="submit" class="form-control" id="submit" value="Register">
+                            <h5><a href={% url 'login_user'%}>Alrady Registered?</a></h5>
+						</div>
+				  	</form>
+                      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+                      <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+                      <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+
+                            $('#submit').click(function() {
+                                var name = $('#name').val();
+                                var email = $('#email').val();   
+                        
+                                if (name == '') {
+                                    $('#email_error').html('**The name must be filled');
+                                    return false;  
+                                } else {
+                                    $('#submit').click(function() {
+                                        $('#name_error').html('');
+                                    });
+                                }
+
+                                if (email == '') {
+                                    $('#email_error').html('**The email must be filled');
+                                    return false;  
+                                } else {
+                                    $('#submit').click(function() {
+                                        $('name_error').html('');
+                                    });
+                                }
+                            });
+                        });
+                    </script>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}
